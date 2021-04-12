@@ -27,7 +27,7 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
+
 [Oo]bj/
 [Oo]ut/
 [Ll]og/
@@ -53,14 +53,13 @@ nunit-*.xml
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
-dlldata.c
+
 
 # Benchmark Results
 BenchmarkDotNet.Artifacts/
 
 # .NET Core
-project.lock.json
-project.fragment.lock.json
+
 artifacts/
 
 # ASP.NET Scaffolding
@@ -143,7 +142,7 @@ _TeamCity*
 !.axoCover/settings.json
 
 # Coverlet is a free, cross platform Code Coverage Tool
-coverage*.json
+
 coverage*.xml
 coverage*.info
 
@@ -262,9 +261,7 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-*.mdf
-*.ldf
-*.ndf
+
 
 # Business Intelligence projects
 *.rdl.data
