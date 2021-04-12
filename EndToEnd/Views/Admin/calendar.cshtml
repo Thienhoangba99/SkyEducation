@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "calendar";
+    Layout = "~/Views/Shared/_LayoutAd.cshtml";
+}
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-header-title">
+                        <h4 class="pull-left page-title">Calendar</h4>
+                        <ol class="breadcrumb pull-right">
+                            <li><a href="#">Xadmino</a></li>
+                            <li class="active">Calendar</li>
+                        </ol>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-2 col-md-3">
+
+                    <h4>Created Events</h4>
+                    <form method="post" id="add_event_form">
+                        <input type="text" class="form-control new-event-form" placeholder="Add new event..." />
+                    </form>
+
+                    <div id='external-events'>
+                        <h4 class="m-b-15">Draggable Events</h4>
+                        <div class='fc-event'>My Event 1</div>
+                        <div class='fc-event'>My Event 2</div>
+                        <div class='fc-event'>My Event 3</div>
+                        <div class='fc-event'>My Event 4</div>
+                        <div class='fc-event'>My Event 5</div>
+                    </div>
+                    <!-- checkbox -->
+                    <div class="checkbox checkbox-custom">
+                        <input id="drop-remove" type="checkbox">
+                        <label for="drop-remove">
+                            Remove after drop
+                        </label>
+                    </div>
+
+                </div>
+
+                <div id='calendar' class="col-md-9 col-lg-10"></div>
+
+            </div>
+            <!-- page end-->
+
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+
+    <footer class="footer">
+        2016 - 2020 © Xadmino.
+    </footer>
+
+</div>
+

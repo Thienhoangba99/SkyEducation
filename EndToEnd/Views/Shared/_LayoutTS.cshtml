@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/glaxdu/assets/img/favicon.png">
+
+    <!-- CSS
+    ============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="~/glaxdu/assets/css/icons.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="~/glaxdu/assets/css/plugins.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/glaxdu/assets/css/style.css">
+    <!-- Modernizer JS -->
+    <script src="~/glaxdu/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+                        <ul class="submenu">
+                            <li>@Html.ActionLink("Students", "Indexmode", "Students")</li>
+                            <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+                            <li>@Html.ActionLink("Instructors", "Instructors", "Index")</li>
+                            <li>@Html.ActionLink("Departments", "Deparments", "Index")</li>
+
+                        </ul>
+                    </li>
+
+                    @if (User.IsInRole("Administrator"))
+                    {
+        <li>@Html.ActionLink("Administration", "Index", "Admin")</li>}
+                    @if (User.IsInRole("Marketing Coordinator Business"))
+                    {
+        <li>@Html.ActionLink("Marketing Coordinator Business", "Index", "Training")</li>}
+                    @if (User.IsInRole("Marketing Coordinator IT"))
+                    {
+        <li>@Html.ActionLink("Marketing Coordinator IT", "Index", "Training")</li>}
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <!-- jQuery JS -->
+    <script src="~/glaxdu/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Popper JS -->
+    <script src="~/glaxdu/assets/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/glaxdu/assets/js/bootstrap.min.js"></script>
+    <!-- Plugins JS -->
+    <script src="~/glaxdu/assets/js/plugins.js"></script>
+    <!-- Ajax Mail -->
+    <script src="~/glaxdu/assets/js/ajax-mail.js"></script>
+    <!-- Main JS -->
+    <script src="~/glaxdu/assets/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

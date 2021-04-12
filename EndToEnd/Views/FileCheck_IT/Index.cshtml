@@ -1,0 +1,27 @@
+﻿
+@model List<string>
+
+@using (Html.BeginForm("Index",
+                        "FileCheck_IT",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+{
+
+<div style="margin: 0 auto;padding:5px 8%;">
+    <h2>Documents List</h2>
+
+    <table>
+        <tr style="border:2px solid #ff0000">
+            <th style="padding:5px;">File Name</th>
+            <th style="padding:5px;">Link</th>
+        </tr>
+        @for (var i = 0; i <= Model.Count - 1; i++)
+        {
+            <tr style="border: 2px solid black;">
+                <td style="padding:5px;">@Model[i].ToString() </td>
+                <td style="padding:5px;">@Html.ActionLink("Download", "Download3", new { FileName = @Model[i].ToString() }) </td>
+            </tr>
+        }
+    </table>
+</div>
+}

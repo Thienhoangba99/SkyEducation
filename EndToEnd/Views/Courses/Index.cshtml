@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EndToEnd.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align:center">Course</h2>
+
+@* <p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div style="margin: 0 auto;padding:10px 10%;">
+    <table class="table">
+        <tr style="border:5px solid green; background-color:#51d73b">
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credits)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr style="border: 3px solid #9a9486; background-color:#87CEFF">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credits)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
